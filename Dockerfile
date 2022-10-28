@@ -3,7 +3,7 @@ LABEL "Author"=" AKM"
 ENV DEBIAN_FRONTEND=nointeractive 
 RUN apt update && apt install git -y < dev/null
 RUN apt  install apache2 -y  
-CMD {"/usr/sbin/apache2ctl", "-D" , "FOREGROUND"}
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
 WORKDIR /var/www/html
 VOLUME /var/log/apache2
