@@ -19,6 +19,8 @@ services:
     image: rabbitmq
     ports:
       - "15672:15672"
+    volumes:
+      - vprorpmq:/var/lib/rabbitmq 
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
@@ -37,3 +39,4 @@ services:
 volumes:
   vprodbdata: {}
   vproappdata: {}
+  vprorpmq: {}
